@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--A700 colors-->
+    <color name="Red">#D50000</color>
+    <color name="Pink">#C51162</color>
+    <color name="Purple">#AA00FF</color>
+    <color name="DeepPurple">#6200EA</color>
+    <color name="Indigo">#304FFE</color>
+    <color name="Blue">#2962FF</color>
+    <color name="LightBlue">#0091EA</color>
+    <color name="Cyan">#00B8D4</color>
+    <color name="Teal">#00BFA5</color>
+    <color name="Green">#00C853</color>
+    <color name="Lime">#AEEA00</color>
+    <color name="Yellow">#FFD600</color>
+    <color name="Amber">#FFAB00</color>
+    <color name="Orange">#FF6D00</color>
+    <color name="DeepOrange">#DD2C00</color>
+    <color name="Brown">#5D4037</color>
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="tarnsPink">#5cff0057</color>
+    <color name="white">#ffffff</color>
+    <color name="BackGround">#ffffff</color>
+    <color name="Blue500">#0D47A1</color>
+    <color name="Brown900">#3E2723</color>
+
+    <array name="A700">
+        <item>@color/DeepOrange</item>
+        <item>@color/Amber</item>
+        <item>@color/Yellow</item>
+        <item>@color/Lime</item>
+        <item>@color/Green</item>
+        <item>@color/Teal</item>
+        <item>@color/Cyan</item>
+        <item>@color/LightBlue</item>
+        <item>@color/Blue</item>
+        <item>@color/Indigo</item>
+        <item>@color/DeepPurple</item>
+        <item>@color/Purple</item>
+        <item>@color/Pink</item>
+        <item>@color/Red</item>
+    </array>
+
+    <color name="black_overlay">#00ffffff</color>
+    <color name="Black">#000</color>
+</resources>
+

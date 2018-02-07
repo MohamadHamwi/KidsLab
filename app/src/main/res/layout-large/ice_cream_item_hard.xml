@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context="com.codebox.kidslab.iceCream_game.IceCreamActivity">
+
+    <com.codebox.kidslab.iceCream_game.DrawIceCream.IceCreamDraw
+        android:id="@+id/iceCreamDraw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.codebox.kidslab.framework.MagicTextView
+        android:id="@+id/creamQuestion"
+        android:fontFamily="@font/surface_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Red"
+        android:textColor="@color/Yellow"
+        app:strokeWidth="1dp"
+        android:textSize="70sp"
+        app:strokeColor="@color/Black"
+        app:innerShadowColor="@color/Black"
+        app:innerShadowDy="2dp"
+        app:innerShadowRadius="1dp"
+        app:outerShadowColor="@color/Black"
+        app:outerShadowDy="3dp"
+        app:outerShadowRadius="3dp"
+        app:strokeJoinStyle="miter"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.437"
+        />
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        android:animateLayoutChanges="true"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="376dp">
+
+        <ImageView
+            android:id="@+id/cream1"
+            android:layout_width="150dp"
+            android:layout_height="250dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginStart="1.5dp"
+            android:layout_weight="1"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="367dp" />
+
+        <ImageView
+            android:id="@+id/cream2"
+            android:layout_width="150dp"
+            android:layout_height="250dp"
+            android:layout_marginEnd="6dp"
+            android:layout_weight="1"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="367dp" />
+
+        <ImageView
+            android:id="@+id/cream3"
+            android:layout_width="150dp"
+            android:layout_height="250dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="1.5dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="367dp" />
+        <ImageView
+            android:id="@+id/cream4"
+            android:layout_width="150dp"
+            android:layout_height="250dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="1.5dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="367dp" />
+
+        <ImageView
+            android:id="@+id/cream5"
+            android:layout_width="150dp"
+            android:layout_height="250dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="1.5dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="367dp" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

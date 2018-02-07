@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "697331363831",
+    "firebase_url": "https://kidslab-52aeb.firebaseio.com",
+    "project_id": "kidslab-52aeb",
+    "storage_bucket": "kidslab-52aeb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:697331363831:android:fe593bc81b1b589c",
+        "android_client_info": {
+          "package_name": "com.codebox.kidslab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "697331363831-bh749ukln0d5nnq5aauln6evqga7a8e2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codebox.kidslab",
+            "certificate_hash": "06a57f4dcf799e9615042cf68cff9f1b59f1a136"
+          }
+        },
+        {
+          "client_id": "697331363831-nh2g6uuvk4fe0cub7f8kdi4stgj67mu7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNaJiGH1O9zk_0ljai5u1kJbszwnbozQY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "697331363831-nh2g6uuvk4fe0cub7f8kdi4stgj67mu7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

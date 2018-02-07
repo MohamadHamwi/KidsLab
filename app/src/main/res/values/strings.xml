@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Kids Lab</string>
+
+    <string name="title_activity_rocket">RocketActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="ProgressSaver">Color</string>
+</resources>
