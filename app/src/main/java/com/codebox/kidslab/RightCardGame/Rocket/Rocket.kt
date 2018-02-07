@@ -8,9 +8,7 @@ import com.codebox.kidslab.framework.ImageUtil
 import com.codebox.kidslab.framework.PixelUtil
 
 
-/**
- * Created by Abed on 9/23/2017.
- */
+
 
 class Rocket(val mContext: Context) {
     var bounds = RectF()
@@ -40,9 +38,9 @@ class Rocket(val mContext: Context) {
 
     private fun ParamsInit() {
         if (isTablet() == true) {
-            Vo = 200f * pixel.getDensity()
+            Vo = 50f * pixel.getDensity()
         } else {
-            Vo = 100f * pixel.getDensity()
+            Vo = 40f * pixel.getDensity()
         }
         dy = pixel.mScreenY.toFloat() - RocketImage().height
         Xconst = (pixel.mScreenX - RocketImage().width) * 0.50f
@@ -83,13 +81,14 @@ class Rocket(val mContext: Context) {
     }
 
     fun RocketImage(): Bitmap {
-        val imageSize = (80 * pixel.getDensity()).toInt()
-        return ImageUtil().loadImage(mContext.resources, R.drawable.rocket_effect, imageSize, imageSize)
+        val H = (90 * pixel.getDensity()).toInt()
+        val W = (55 * pixel.getDensity()).toInt()
+        return ImageUtil().getBitmapFromVectorDrawable(mContext, R.drawable.rocket, W, H)
     }
 
     fun Update(dt: Float, canvas: Canvas) {
 
-        if (dy <= (pixel.mScreenY / 2)) {
+        if (dy <= (pixel.mScreenY /2)) {
 
             if (soundStart1) {
                 soundPlayer.playExplode()

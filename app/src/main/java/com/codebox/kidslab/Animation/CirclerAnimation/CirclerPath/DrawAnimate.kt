@@ -8,9 +8,7 @@ import android.view.SurfaceView
 import com.codebox.kidslab.framework.PixelUtil
 import com.codebox.kidslab.framework.UIColorHelper
 
-/**
- * Created by Abed on 12/21/2017.
- */
+
 class DrawAnimate : SurfaceView, Runnable, SurfaceHolder.Callback {
     lateinit var mGameThread: Thread
     lateinit var colorGen:UIColorHelper
@@ -38,7 +36,7 @@ var isPaused = false
     var radius = 0
     override fun run() {
         do {
-            if (updateTimeDraw + (1/15) * convertToSec <= runTime && !isPaused && radius < pixel.mScreenX+150) {
+            if (updateTimeDraw + (1/25) * convertToSec <= runTime && !isPaused && radius < pixel.mScreenX+150) {
                     if (mHolder.surface.isValid) {
                         Sx = pixel.mScreenX / 2f
                         Sy = pixel.mScreenY / 2f

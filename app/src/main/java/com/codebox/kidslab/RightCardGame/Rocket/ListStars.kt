@@ -8,9 +8,7 @@ import com.codebox.kidslab.framework.ImageUtil
 import com.codebox.kidslab.framework.PixelUtil
 import java.util.*
 
-/**
- * Created by Abed on 9/27/2017.
- */
+
 class ListStars(val mContext: Context) {
 
     private var stars: ArrayList<Stars>
@@ -51,10 +49,12 @@ class ListStars(val mContext: Context) {
             star.bounds = RectF(bounds.centerX() - size / 2, bounds.centerY() - size / 2, bounds.centerX() + size / 2, bounds.centerY() + size / 2)
             star.bitmap = bitmap
 
-            star.dirX = (random.nextInt(200) - 100) * pixel.getDensity() //between -50 and 50
-            star.dirY = -(random.nextInt(200) - 100) * pixel.getDensity()  //between -50 and 50
-            star.accelX = 10f * pixel.getDensity()
-            star.accelY = 30 * pixel.getDensity()  //accelY is gravity
+
+            star.dirX = (random.nextInt(100) - 50) * pixel.getDensity() //between -50 and 100
+            star.dirY = -(random.nextInt(100) - 50) * pixel.getDensity()  //between -50 and 50
+
+            star.accelX = 0.00000005f
+            star.accelY = 0.00000005f   //accelY is gravity
 
             stars.add(star)
         }

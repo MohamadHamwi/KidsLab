@@ -5,8 +5,8 @@ import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Matrix
 import android.graphics.Paint
-import com.codebox.kidslab.framework.Helper
 import com.codebox.kidslab.R
+import com.codebox.kidslab.framework.Helper
 import com.codebox.kidslab.framework.ImageUtil
 import com.codebox.kidslab.framework.PixelUtil
 
@@ -23,7 +23,6 @@ class IceCream(val mContext: Context, val creamNum: Int) {
     }
 
     fun img(): ImageUtil = if (Helper().isTablet(mContext)) ImageUtil(225 * scale, 300 * scale) else ImageUtil(125 * scale, 196 * scale)
-
 
     fun creamImage(): Bitmap {
         return img().getBitmapFromVectorDrawable(mContext, creamImg, img().W!!, img().H!!)

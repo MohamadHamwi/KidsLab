@@ -11,9 +11,6 @@ import kotlin.collections.ArrayList
 
 
 
-/**
- * Created by Abed on 9/23/2017.
- */
 class RocketView : SurfaceView, Runnable, SurfaceHolder.Callback {
 
     var mGameThread: Thread? = null
@@ -24,7 +21,8 @@ class RocketView : SurfaceView, Runnable, SurfaceHolder.Callback {
     lateinit var pixel: PixelUtil
 
 
-    @Volatile var mPlaying: Boolean = false
+    @Volatile
+    var mPlaying: Boolean = false
 
     var mPaused = true
 
@@ -44,8 +42,7 @@ class RocketView : SurfaceView, Runnable, SurfaceHolder.Callback {
     }
 
 
-    fun init()
-    {
+    fun init() {
         pixel = PixelUtil(mContext)
         random = Random()
         mHolder = holder
@@ -58,18 +55,19 @@ class RocketView : SurfaceView, Runnable, SurfaceHolder.Callback {
         try {
             while (!mPaused && mPlaying) {
 
-                val Dt = (System.nanoTime() - startTime) / 1000000000.0f
+                val Dt = 0.09f + (System.nanoTime() - startTime) / 1000000000.0f
                 startTime = System.nanoTime()
-
                 // rocket.drawRocket(holder)
                 // Make sure our drawing surface is valid or we crash
                 if (mHolder.surface.isValid) {
 
                     val mCanvas = mHolder.lockCanvas()
-                    mCanvas.drawColor(0, android.graphics.PorterDuff.Mode.CLEAR);
+                    mCanvas.drawColor(0, android.graphics.PorterDuff.Mode.CLEAR)
 
                     for (i in 0..2) {
-
+                        /*  if (!rocket[i].soundStart1){
+                              Dt=0f
+                          }*/
                         rocket[i].Update(Dt, mCanvas)
                     }
 
@@ -77,7 +75,7 @@ class RocketView : SurfaceView, Runnable, SurfaceHolder.Callback {
 
                 }
             }
-        }catch (e:NullPointerException){
+        } catch (e: NullPointerException) {
             e.printStackTrace()
         }
     }
