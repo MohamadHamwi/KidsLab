@@ -19,9 +19,15 @@ import com.codebox.kidslab.framework.inflater
 import com.codebox.kidslab.iceCream_game.DrawIceCream.IceCreamDraw
 import com.codebox.kidslab.iceCream_game.GameData.CreamsDrawables.blueCream
 import com.codebox.kidslab.iceCream_game.GameData.CreamsDrawables.brownCream
+import com.codebox.kidslab.iceCream_game.GameData.CreamsDrawables.cyanCream
+import com.codebox.kidslab.iceCream_game.GameData.CreamsDrawables.grayCream
 import com.codebox.kidslab.iceCream_game.GameData.CreamsDrawables.greenCream
+import com.codebox.kidslab.iceCream_game.GameData.CreamsDrawables.limeCream
 import com.codebox.kidslab.iceCream_game.GameData.CreamsDrawables.orangeCream
+import com.codebox.kidslab.iceCream_game.GameData.CreamsDrawables.pinkCream
+import com.codebox.kidslab.iceCream_game.GameData.CreamsDrawables.purpleCream
 import com.codebox.kidslab.iceCream_game.GameData.CreamsDrawables.redCream
+import com.codebox.kidslab.iceCream_game.GameData.CreamsDrawables.whiteCream
 import com.codebox.kidslab.iceCream_game.GameData.CreamsDrawables.yellowCream
 import com.codebox.kidslab.iceCream_game.GameData.IceCreamGameData
 import com.codebox.kidslab.iceCream_game.GameData.SoundPlayer
@@ -33,7 +39,7 @@ import com.codebox.kidslab.iceCream_game.GameData.SoundPlayer
 class IceCreamViewPagerAdapter(val mContext: Context) : PagerAdapter(), View.OnClickListener {
 
 
-    private val dataIceCreamModel = IceCreamGameData().gameList()
+    private val dataIceCreamModel = IceCreamGameData(mContext).gameList()
     private var isMedium = mutableListOf<Boolean>(false, false, false)
     private var isHard = mutableListOf<Boolean>(false, false, false)
     private var lose = 0
@@ -66,8 +72,7 @@ class IceCreamViewPagerAdapter(val mContext: Context) : PagerAdapter(), View.OnC
             saveState.put(SCORE_KEY, 0.0)
         }
         score = saveState.getDouble(SCORE_KEY)
-
-        isLevel2 = score in 2.0..5.5 || score > 8.0 || levelState >40
+        isLevel2 = score in 2.0..5.5 || score > 8.0 || (levelState > 40 && levelState < 50) || levelState > 90
         val data = dataIceCreamModel[position]
         if (data.img5 != null) {
             isMedium[position] = true
@@ -176,14 +181,22 @@ class IceCreamViewPagerAdapter(val mContext: Context) : PagerAdapter(), View.OnC
     }
 
     private fun getColor(textQuest: String): Int {
-        return if (score < 6.0 && levelState <= 40) {
+        return if (score < 6.0 && levelState <= 40 || (levelState > 49 && levelState <= 90)) {
             val color = when (textQuest) {
-                "Red" -> R.color.Red
-                "Green" -> R.color.Green
-                "Blue" -> R.color.Blue500
-                "Orange" -> R.color.Orange
-                "Yellow" -> R.color.Yellow
-                "brown" -> R.color.Brown900
+                mContext.getString(R.string.color_red) -> R.color.Red
+                mContext.getString(R.string.color_green) -> R.color.Green
+                mContext.getString(R.string.color_yellow) -> R.color.Yellow
+                mContext.getString(R.string.color_blue) -> R.color.Blue500
+                mContext.getString(R.string.color_orange) -> R.color.Orange
+                mContext.getString(R.string.color_brown) -> R.color.Brown900
+
+                mContext.getString(R.string.color_pink) -> R.color.Pink
+                mContext.getString(R.string.color_cyan) -> R.color.Cyan
+                mContext.getString(R.string.color_lime) -> R.color.Lime
+                mContext.getString(R.string.color_gray) -> R.color.Gray
+                mContext.getString(R.string.color_purple) -> R.color.Purple
+                mContext.getString(R.string.color_white) -> R.color.white
+
                 else -> R.color.Black
             }
             mContext.resources.getColor(color)
@@ -191,22 +204,30 @@ class IceCreamViewPagerAdapter(val mContext: Context) : PagerAdapter(), View.OnC
     }
 
     private fun checkCream(creamImg: Int) = when (creamImg) {
-        redCream -> "Red"
-        greenCream -> "Green"
-        yellowCream -> "Yellow"
-        blueCream -> "Blue"
-        orangeCream -> "Orange"
-        brownCream -> "brown"
-        else -> "Error"
+        redCream -> mContext.getString(R.string.color_red)
+        greenCream -> mContext.getString(R.string.color_green)
+        yellowCream -> mContext.getString(R.string.color_yellow)
+        blueCream -> mContext.getString(R.string.color_blue)
+        orangeCream -> mContext.getString(R.string.color_orange)
+        brownCream -> mContext.getString(R.string.color_brown)
+
+        pinkCream -> mContext.getString(R.string.color_pink)
+        cyanCream -> mContext.getString(R.string.color_cyan)
+        limeCream -> mContext.getString(R.string.color_lime)
+        grayCream -> mContext.getString(R.string.color_gray)
+        purpleCream -> mContext.getString(R.string.color_purple)
+        whiteCream -> mContext.getString(R.string.color_white)
+
+        else -> null
     }
 
 
     private fun applyCurrentPlayScore() {
         val score_old = saveState.getDouble(SCORE_KEY)
-        if (lose == 0 && levelState < 50) {
+        if (lose == 0 && levelState < 100) {
             saveState.put(LEVEL_KEY, levelState + 1.0)
             saveState.put(SCORE_KEY, score_old + 1.0)
-        } else if (lose <= 3 && levelState <= 50) {
+        } else if (lose <= 3 && levelState <= 100) {
             saveState.put(LEVEL_KEY, levelState + 0.5)
             saveState.put(SCORE_KEY, score_old + 0.5)
 

@@ -12,4 +12,11 @@ object CreamsDrawables {
      const val blueCream = R.drawable.ice_cream_blue
      const val orangeCream = R.drawable.ice_cream_orange
      const val brownCream = R.drawable.ice_cream_brown
+
+    const val cyanCream = R.drawable.ice_cream_cyan
+    const val pinkCream = R.drawable.ice_cream_pink
+    const val limeCream = R.drawable.ice_cream_lime
+    const val grayCream = R.drawable.ice_cream_gray
+    const val whiteCream = R.drawable.ice_cream_white
+    const val purpleCream = R.drawable.ice_cream_purple
 }

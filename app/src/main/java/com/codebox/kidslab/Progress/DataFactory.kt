@@ -13,7 +13,6 @@ class DataFactory : Application() {
     companion object {
         lateinit var instance: DataFactory
         lateinit var mPref: SharedPreferences
-        lateinit var mEditor: SharedPreferences.Editor
                 /* The private set is used
                  so that a value can’t be assigned from an external class.*/
             private set
@@ -48,14 +47,14 @@ class DataFactory : Application() {
 
     fun put(key: String, `val`: Int) {
         mPref.edit {
-            mEditor.putInt(key, `val`)
+            putInt(key, `val`)
         }
     }
 
 
     fun put(key: String, `val`: Boolean) {
         mPref.edit {
-            mEditor.putBoolean(key, `val`)
+            putBoolean(key, `val`)
         }
 
     }
@@ -63,7 +62,7 @@ class DataFactory : Application() {
 
     fun put(key: String, `val`: Float) {
         mPref.edit {
-            mEditor.putFloat(key, `val`)
+            putFloat(key, `val`)
         }
     }
 
@@ -81,18 +80,20 @@ class DataFactory : Application() {
      *
      *
      *
-     * @param akey The name of the preference to store.
+     * @param key The name of the preference to store.
      *
      * @param val The new value for the preference.
      */
 
     fun put(key: String, `val`: Double) {
-        mPref.edit { mEditor.putString(key, `val`.toString()) }
+        mPref.edit {
+            putString(key, `val`.toString())
+        }
     }
 
     fun remove(key: Int) {
         mPref.edit {
-            mEditor.remove(key.toString())
+            remove(key.toString())
         }
     }
 
@@ -103,7 +104,7 @@ class DataFactory : Application() {
      */
     fun clear() {
         mPref.edit {
-            mEditor.clear()
+            clear()
         }
     }
 }

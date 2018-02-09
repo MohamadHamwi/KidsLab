@@ -4,10 +4,11 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="tarnsPink">#5cff0057</color>
-    <color name="white">#ffffff</color>
+    <color name="white">#FFFFFF</color>
     <color name="BackGround">#ffffff</color>
     <color name="Blue500">#0D47A1</color>
     <color name="Brown900">#3E2723</color>
+    <color name="Gray">#757575</color>
 
     <array name="A700">
         <item>@color/DeepOrange</item>
