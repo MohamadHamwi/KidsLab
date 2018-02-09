@@ -31,8 +31,6 @@ class IceCreamGameData {
             color4 = R.drawable.ice_cream_blue
             color5 = R.drawable.ice_cream_orange
             color6 = R.drawable.ice_cream_brown
-
-
         }
     }
 
