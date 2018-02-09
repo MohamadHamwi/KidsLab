@@ -5,102 +5,118 @@ import com.codebox.kidslab.R
 import java.util.*
 
 
-/**
- * Created by Abed on 10/2/2017.
- */
-
-class IceCreamGameData() {
+class IceCreamGameData {
     private val dataList: MutableList<IceCreamModel> = mutableListOf<IceCreamModel>()
     private var rand = Random()
     var gameData = mutableListOf<IceCreamModel>()
     private val LEVEL_KEY = "Level"
     private val dataStorage = DataFactory.instance
-
     val levelState = dataStorage.getDouble(LEVEL_KEY)
 
     var n = 1
 
+    var color1: Int = 0
+    var color2: Int = 0
+    var color3: Int = 0
+    var color4: Int = 0
+    var color5: Int = 0
+    var color6: Int = 0
+
+
+    init {
+        if (levelState < 50) {
+            color1 = R.drawable.ice_cream_red
+            color2 = R.drawable.ice_cream_green
+            color3 = R.drawable.ice_cream_yellow
+            color4 = R.drawable.ice_cream_blue
+            color5 = R.drawable.ice_cream_orange
+            color6 = R.drawable.ice_cream_brown
+
+
+        }
+    }
+
     private fun gameList0() {
-        dataList.add(IceCreamModel(R.drawable.ice_cream_red, R.drawable.ice_cream_green, R.drawable.ice_cream_yellow, null, null, "Red", R.drawable.ice_cream_red))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_yellow, R.drawable.ice_cream_red, R.drawable.ice_cream_green, null, null, "Red", R.drawable.ice_cream_red))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_green, R.drawable.ice_cream_yellow, R.drawable.ice_cream_red, null, null, "Red", R.drawable.ice_cream_red))
+        dataList.add(IceCreamModel(color1, color2, color3, null, null, "Red", color1))
+        dataList.add(IceCreamModel(color3, color1, color2, null, null, "Red", color1))
+        dataList.add(IceCreamModel(color2, color3, color1, null, null, "Red", color1))
 
-        dataList.add(IceCreamModel(R.drawable.ice_cream_green, R.drawable.ice_cream_yellow, R.drawable.ice_cream_red, null, null, "Green", R.drawable.ice_cream_green))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_red, R.drawable.ice_cream_green, R.drawable.ice_cream_yellow, null, null, "Green", R.drawable.ice_cream_green))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_yellow, R.drawable.ice_cream_red, R.drawable.ice_cream_green, null, null, "Green", R.drawable.ice_cream_green))
+        dataList.add(IceCreamModel(color2, color3, color1, null, null, "Green", color2))
+        dataList.add(IceCreamModel(color1, color2, color3, null, null, "Green", color2))
+        dataList.add(IceCreamModel(color3, color1, color2, null, null, "Green", color2))
 
-        dataList.add(IceCreamModel(R.drawable.ice_cream_yellow, R.drawable.ice_cream_red, R.drawable.ice_cream_green, null, null, "Yellow", R.drawable.ice_cream_yellow))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_green, R.drawable.ice_cream_yellow, R.drawable.ice_cream_red, null, null, "Yellow", R.drawable.ice_cream_yellow))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_red, R.drawable.ice_cream_green, R.drawable.ice_cream_yellow, null, null, "Yellow", R.drawable.ice_cream_yellow))
+        dataList.add(IceCreamModel(color3, color1, color2, null, null, "Yellow", color3))
+        dataList.add(IceCreamModel(color2, color3, color1, null, null, "Yellow", color3))
+        dataList.add(IceCreamModel(color1, color2, color3, null, null, "Yellow", color3))
     }
 
     private fun gameList1() {
-        dataList.add(IceCreamModel(R.drawable.ice_cream_blue, R.drawable.ice_cream_green, R.drawable.ice_cream_yellow, null, null, "Blue", R.drawable.ice_cream_blue))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_yellow, R.drawable.ice_cream_blue, R.drawable.ice_cream_green, null, null, "Blue", R.drawable.ice_cream_blue))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_green, R.drawable.ice_cream_yellow, R.drawable.ice_cream_blue, null, null, "Blue", R.drawable.ice_cream_blue))
+        dataList.add(IceCreamModel(color4, color2, color3, null, null, "Blue", color4))
+        dataList.add(IceCreamModel(color3, color4, color2, null, null, "Blue", color4))
+        dataList.add(IceCreamModel(color2, color3, color4, null, null, "Blue", color4))
 
-        dataList.add(IceCreamModel(R.drawable.ice_cream_green, R.drawable.ice_cream_yellow, R.drawable.ice_cream_blue, R.drawable.ice_cream_red,null, "Red", R.drawable.ice_cream_red))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_blue, R.drawable.ice_cream_green, R.drawable.ice_cream_red, R.drawable.ice_cream_yellow,null, "Green", R.drawable.ice_cream_green))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_red, R.drawable.ice_cream_yellow, R.drawable.ice_cream_blue, R.drawable.ice_cream_green,null,"Green", R.drawable.ice_cream_green))
+        dataList.add(IceCreamModel(color2, color3, color4, color1, null, "Red", color1))
+        dataList.add(IceCreamModel(color4, color2, color1, color3, null, "Green", color2))
+        dataList.add(IceCreamModel(color1, color3, color4, color2, null, "Green", color2))
 
-        dataList.add(IceCreamModel(R.drawable.ice_cream_yellow, R.drawable.ice_cream_blue, R.drawable.ice_cream_green, null, null, "Yellow", R.drawable.ice_cream_yellow))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_green, R.drawable.ice_cream_yellow, R.drawable.ice_cream_blue, null, null, "Yellow", R.drawable.ice_cream_yellow))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_blue, R.drawable.ice_cream_green, R.drawable.ice_cream_yellow, null, null, "Yellow", R.drawable.ice_cream_yellow))
+        dataList.add(IceCreamModel(color3, color4, color2, null, null, "Yellow", color3))
+        dataList.add(IceCreamModel(color2, color3, color4, null, null, "Yellow", color3))
+        dataList.add(IceCreamModel(color4, color2, color3, null, null, "Yellow", color3))
     }
 
     private fun gameList2() {
-        dataList.add(IceCreamModel(R.drawable.ice_cream_orange, R.drawable.ice_cream_green, R.drawable.ice_cream_yellow, null, null, "Orange", R.drawable.ice_cream_orange))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_blue, R.drawable.ice_cream_orange, R.drawable.ice_cream_green, null, null, "Orange", R.drawable.ice_cream_orange))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_green, R.drawable.ice_cream_blue, R.drawable.ice_cream_orange, null, null, "Orange", R.drawable.ice_cream_orange))
+        dataList.add(IceCreamModel(color5, color2, color3, null, null, "Orange", color5))
+        dataList.add(IceCreamModel(color4, color5, color2, null, null, "Orange", color5))
+        dataList.add(IceCreamModel(color2, color4, color5, null, null, "Orange", color5))
 
-        dataList.add(IceCreamModel(R.drawable.ice_cream_green, R.drawable.ice_cream_orange, R.drawable.ice_cream_blue, R.drawable.ice_cream_red, R.drawable.ice_cream_yellow, "Green", R.drawable.ice_cream_green))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_blue, R.drawable.ice_cream_green, R.drawable.ice_cream_yellow, R.drawable.ice_cream_orange, R.drawable.ice_cream_red, "Red", R.drawable.ice_cream_red))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_red, R.drawable.ice_cream_orange, R.drawable.ice_cream_yellow, R.drawable.ice_cream_green, R.drawable.ice_cream_blue, "Red", R.drawable.ice_cream_red))
+        dataList.add(IceCreamModel(color2, color5, color4, color1, color3, "Green", color2))
+        dataList.add(IceCreamModel(color4, color2, color3, color5, color1, "Red", color1))
+        dataList.add(IceCreamModel(color1, color5, color3, color2, color4, "Red", color1))
 
-        dataList.add(IceCreamModel(R.drawable.ice_cream_blue, R.drawable.ice_cream_red, R.drawable.ice_cream_orange, R.drawable.ice_cream_green, R.drawable.ice_cream_yellow, "Blue", R.drawable.ice_cream_blue))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_green, R.drawable.ice_cream_red, R.drawable.ice_cream_yellow, R.drawable.ice_cream_orange, R.drawable.ice_cream_blue, "Yellow", R.drawable.ice_cream_yellow))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_orange, R.drawable.ice_cream_green, R.drawable.ice_cream_yellow, R.drawable.ice_cream_red, R.drawable.ice_cream_blue, "Blue", R.drawable.ice_cream_blue))
+        dataList.add(IceCreamModel(color4, color1, color5, color2, color3, "Blue", color4))
+        dataList.add(IceCreamModel(color2, color1, color3, color5, color4, "Yellow", color3))
+        dataList.add(IceCreamModel(color5, color2, color3, color1, color4, "Blue", color4))
 
     }
 
     private fun gameList3() {
-        dataList.add(IceCreamModel(R.drawable.ice_cream_brown, R.drawable.ice_cream_green, R.drawable.ice_cream_red, null, null, "brown", R.drawable.ice_cream_brown))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_yellow, R.drawable.ice_cream_orange, R.drawable.ice_cream_brown, R.drawable.ice_cream_green, null, "brown", R.drawable.ice_cream_brown))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_blue,R.drawable.ice_cream_brown, R.drawable.ice_cream_red, R.drawable.ice_cream_yellow, null, "brown", R.drawable.ice_cream_brown))
+        dataList.add(IceCreamModel(color6, color2, color1, null, null, "brown", color6))
+        dataList.add(IceCreamModel(color3, color5, color6, color2, null, "brown", color6))
+        dataList.add(IceCreamModel(color4, color6, color1, color3, null, "brown", color6))
 
-        dataList.add(IceCreamModel(R.drawable.ice_cream_orange, R.drawable.ice_cream_yellow, R.drawable.ice_cream_blue, R.drawable.ice_cream_green, R.drawable.ice_cream_red, "Orange", R.drawable.ice_cream_orange))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_blue, R.drawable.ice_cream_green, R.drawable.ice_cream_yellow, R.drawable.ice_cream_red, R.drawable.ice_cream_orange, "Green", R.drawable.ice_cream_green))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_red, R.drawable.ice_cream_orange, R.drawable.ice_cream_blue, R.drawable.ice_cream_green, R.drawable.ice_cream_brown, "Orange", R.drawable.ice_cream_orange))
+        dataList.add(IceCreamModel(color5, color3, color4, color2, color1, "Orange", color5))
+        dataList.add(IceCreamModel(color4, color2, color3, color1, color5, "Green", color2))
+        dataList.add(IceCreamModel(color1, color5, color4, color2, color6, "Orange", color5))
 
-        dataList.add(IceCreamModel(R.drawable.ice_cream_green,R.drawable.ice_cream_red, R.drawable.ice_cream_brown, R.drawable.ice_cream_yellow, R.drawable.ice_cream_orange, "Red", R.drawable.ice_cream_red))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_yellow, R.drawable.ice_cream_orange, R.drawable.ice_cream_red, R.drawable.ice_cream_blue, R.drawable.ice_cream_green, "Blue", R.drawable.ice_cream_blue))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_blue, R.drawable.ice_cream_green, R.drawable.ice_cream_brown, R.drawable.ice_cream_yellow, R.drawable.ice_cream_red, "Blue", R.drawable.ice_cream_blue))
+        dataList.add(IceCreamModel(color2, color1, color6, color3, color5, "Red", color1))
+        dataList.add(IceCreamModel(color3, color5, color1, color4, color2, "Blue", color4))
+        dataList.add(IceCreamModel(color4, color2, color6, color3, color1, "Blue", color4))
     }
 
     private fun gameList4() {
-        dataList.add(IceCreamModel(R.drawable.ice_cream_brown,R.drawable.ice_cream_blue, R.drawable.ice_cream_green, R.drawable.ice_cream_yellow, R.drawable.ice_cream_red, "brown", R.drawable.ice_cream_brown))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_yellow, R.drawable.ice_cream_red,R.drawable.ice_cream_orange, R.drawable.ice_cream_brown, R.drawable.ice_cream_green, "brown", R.drawable.ice_cream_brown))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_green, R.drawable.ice_cream_yellow,R.drawable.ice_cream_blue, R.drawable.ice_cream_red, R.drawable.ice_cream_brown, "brown", R.drawable.ice_cream_brown))
+        dataList.add(IceCreamModel(color6, color4, color2, color3, color1, "brown", color6))
+        dataList.add(IceCreamModel(color3, color1, color5, color6, color2, "brown", color6))
+        dataList.add(IceCreamModel(color2, color3, color4, color1, color6, "brown", color6))
 
-        dataList.add(IceCreamModel(R.drawable.ice_cream_orange, R.drawable.ice_cream_brown, R.drawable.ice_cream_green, R.drawable.ice_cream_yellow, R.drawable.ice_cream_blue, "Orange", R.drawable.ice_cream_orange))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_yellow, R.drawable.ice_cream_brown, R.drawable.ice_cream_blue, R.drawable.ice_cream_orange, R.drawable.ice_cream_green, "Orange", R.drawable.ice_cream_orange))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_green, R.drawable.ice_cream_yellow, R.drawable.ice_cream_blue, R.drawable.ice_cream_brown, R.drawable.ice_cream_orange, "Orange", R.drawable.ice_cream_orange))
+        dataList.add(IceCreamModel(color5, color6, color2, color3, color4, "Orange", color5))
+        dataList.add(IceCreamModel(color3, color6, color4, color5, color2, "Orange", color5))
+        dataList.add(IceCreamModel(color2, color3, color4, color6, color5, "Orange", color5))
 
-        dataList.add(IceCreamModel(R.drawable.ice_cream_brown, R.drawable.ice_cream_green, R.drawable.ice_cream_yellow, R.drawable.ice_cream_blue, R.drawable.ice_cream_orange, "Blue", R.drawable.ice_cream_blue))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_yellow, R.drawable.ice_cream_blue, R.drawable.ice_cream_orange, R.drawable.ice_cream_brown, R.drawable.ice_cream_green, "Blue", R.drawable.ice_cream_blue))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_orange,R.drawable.ice_cream_green, R.drawable.ice_cream_brown, R.drawable.ice_cream_yellow, R.drawable.ice_cream_blue, "Blue", R.drawable.ice_cream_blue))
+        dataList.add(IceCreamModel(color6, color2, color3, color4, color5, "Blue", color4))
+        dataList.add(IceCreamModel(color3, color4, color5, color6, color2, "Blue", color4))
+        dataList.add(IceCreamModel(color5, color2, color6, color3, color4, "Blue", color4))
 
-        dataList.add(IceCreamModel(R.drawable.ice_cream_red, R.drawable.ice_cream_green,R.drawable.ice_cream_blue, R.drawable.ice_cream_yellow, R.drawable.ice_cream_orange, "Red", R.drawable.ice_cream_red))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_yellow, R.drawable.ice_cream_orange, R.drawable.ice_cream_red,R.drawable.ice_cream_blue, R.drawable.ice_cream_green, "Red", R.drawable.ice_cream_red))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_green, R.drawable.ice_cream_yellow, R.drawable.ice_cream_red,R.drawable.ice_cream_blue, R.drawable.ice_cream_orange, "Red", R.drawable.ice_cream_red))
+        dataList.add(IceCreamModel(color1, color2, color4, color3, color5, "Red", color1))
+        dataList.add(IceCreamModel(color3, color5, color1, color4, color2, "Red", color1))
+        dataList.add(IceCreamModel(color2, color3, color1, color4, color5, "Red", color1))
 
-        dataList.add(IceCreamModel(R.drawable.ice_cream_green, R.drawable.ice_cream_yellow, R.drawable.ice_cream_orange,R.drawable.ice_cream_red, R.drawable.ice_cream_brown, "Green", R.drawable.ice_cream_green))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_brown, R.drawable.ice_cream_orange, R.drawable.ice_cream_red, R.drawable.ice_cream_green, R.drawable.ice_cream_yellow, "Green", R.drawable.ice_cream_green))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_orange,R.drawable.ice_cream_brown, R.drawable.ice_cream_yellow, R.drawable.ice_cream_red, R.drawable.ice_cream_green, "Green", R.drawable.ice_cream_green))
+        dataList.add(IceCreamModel(color2, color3, color5, color1, color6, "Green", color2))
+        dataList.add(IceCreamModel(color6, color5, color1, color2, color3, "Green", color2))
+        dataList.add(IceCreamModel(color5, color6, color3, color1, color2, "Green", color2))
 
-        dataList.add(IceCreamModel(R.drawable.ice_cream_yellow, R.drawable.ice_cream_orange,R.drawable.ice_cream_red, R.drawable.ice_cream_blue, R.drawable.ice_cream_green, "Yellow", R.drawable.ice_cream_yellow))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_green, R.drawable.ice_cream_yellow, R.drawable.ice_cream_blue, R.drawable.ice_cream_red,R.drawable.ice_cream_orange, "Yellow", R.drawable.ice_cream_yellow))
-        dataList.add(IceCreamModel(R.drawable.ice_cream_blue, R.drawable.ice_cream_orange, R.drawable.ice_cream_green,R.drawable.ice_cream_red, R.drawable.ice_cream_yellow, "Yellow", R.drawable.ice_cream_yellow))
+        dataList.add(IceCreamModel(color3, color5, color1, color4, color2, "Yellow", color3))
+        dataList.add(IceCreamModel(color2, color3, color4, color1, color5, "Yellow", color3))
+        dataList.add(IceCreamModel(color4, color5, color2, color1, color3, "Yellow", color3))
     }
 
 
